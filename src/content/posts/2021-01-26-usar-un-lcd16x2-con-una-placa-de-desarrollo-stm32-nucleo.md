@@ -14,9 +14,9 @@ description: |-
 ---
 ## Introducción
 
-Hace un tiempo compré un set de Arduino uno que incluía entre otras cosas una pantalla LCD de 2 lineas y 16 columnas en la que se pueden mostrar caracteres en una matriz de 5x11 o 5x8 (dependiendo de la configuración) puntos.
+Hace un tiempo compré un set de Arduino uno que incluía entre otras cosas una pantalla LCD de 2 líneas y 16 columnas en la que se pueden mostrar caracteres en una matriz de 5x11 o 5x8 (dependiendo de la configuración) puntos.
 
-En su día la usé junto a una librería para visualizar la cuenta de un reloj, en ese momento no me paré a pensar en como funcionaba este dispositivo.  Recientemente volví a encontrar la pantalla LCD, y está vez tenia en mi posesión  una placa de desarrollo STM32 Nucleo, por lo que decidí que era hora de resolver mi duda inicial: *¿Como hago que esto funcione?*.
+En su día la usé junto a una librería para visualizar la cuenta de un reloj, en ese momento no me paré a pensar en cómo funcionaba este dispositivo.  Recientemente volví a encontrar la pantalla LCD, y está vez tenía en mi posesión  una placa de desarrollo STM32 Nucleo, por lo que decidí que era hora de resolver mi duda inicial: *¿Como hago que esto funcione?*
 
 Para programar el microcontrolador he hecho uso de las funciones HAL de STM32, por lo que el código debería ser fácilmente portable, yo no lo he probado.
 
@@ -24,19 +24,19 @@ Para programar el microcontrolador he hecho uso de las funciones HAL de STM32, p
 
 * **STM32F446RE Nucleo board**, un microcontrolador con una CPU Arm® Cortex®-M4 32-bit
 * **LCD 1602 Module**, la pantalla LCD que incluía el kit de Arduino.
-* **AzDelivery Logic Analyzer**, una analizador lógico barato para ayudarme en la depuración.
+* **AzDelivery Logic Analyzer**, un analizador lógico barato para ayudarme en la depuración.
 
 ## Consideraciones previas
 
-El modulo LCD cuenta con un pin de habilitación **E** , según el fabricante este pin debe mantenerse a nivel alto mientras se ejecuta la instrucción, estás instrucciones pueden tardar unos milisegundos o unos microsegundos dependiendo de lo que hagan.
+El módulo LCD cuenta con un pin de habilitación **E**, según el fabricante este pin debe mantenerse a nivel alto mientras se ejecuta la instrucción, estás instrucciones pueden tardar unos milisegundos o unos microsegundos dependiendo de lo que hagan.
 
-Al usar la librería HAL de STM32 disponemos de la función **HAL\_Delay** que crea esperas de tantos ms como le pidas, pero una espera de un ms para algo que necesita 40-60 μs es pasarse, por lo que necesitaremos una función de apoyo, **delay\_us**, para las esperas mas cortas.
+Al usar la librería HAL de STM32 disponemos de la función **HAL\_Delay** que crea esperas de tantos ms como le pidas, pero una espera de un ms para algo que necesita 40-60 μs es pasarse, por lo que necesitaremos una función de apoyo, **delay\_us**, para las esperas más cortas.
 
-Estas esperas pueden solventarse leyendo el estado de la bandera *busy* que proporciona el dispositivo, pero para eso necesitas cambiar el modo de funcionamiento de uno de los pins y termina siendo mas trabajoso que simplemente esperar un tiempo prudencial.
+Estas esperas pueden solventarse leyendo el estado de la bandera *busy* que proporciona el dispositivo, pero para eso necesitas cambiar el modo de funcionamiento de uno de los pins y termina siendo más trabajoso que simplemente esperar un tiempo prudencial.
 
 <i>¡Importante! Tanto HAL_Delay como delay_us van a ser funciones que bloquean el procesador, no es la mejor manera de implementarlo, pero como no voy a usarlo en un sistema con unos requisitos temporales estrictos lo he hecho así.</i>
 
-El controlador del LCD (*HD44780* o similar) dispone de dos modos de funcionamiento, bus de dato de 8 bits o de 4 bits, en el segundo caso tienes que enviar a información en dos veces pero a cambio tienes que usar 4 cables menos. Este es el modo de funcionamiento que se ha implementado.
+El controlador del LCD (*HD44780* o similar) dispone de dos modos de funcionamiento, bus de dato de 8 bits o de 4 bits, en el segundo caso tienes que enviar a información en dos veces, pero a cambio tienes que usar 4 cables menos. Este es el modo de funcionamiento que se ha implementado.
 
 ## Delay_us
 
@@ -93,9 +93,9 @@ void delay_us(volatile uint16_t u16){
 
 **timer\_delay\_init** Inicializa el contador que se le indique, en mi caso el contador *TIM6* y se le aplica un pre-escalado  igual a la velocidad del reloj dividido un millón, de esta forma (siempre que el reloj sea mayor a 1 Mhz) el contador avanzará en una unidad cada microsegundo.
 
-Ejemplo: Reloj de 8Mhz (que además es el como viene configurado por defecto en esta placa), supondría un preescalador de 8,haciendo las cuentas 8x10<sup>6</sup> Hz / 8 = 10<sup>6</sup> Hz.  El contador se actualiza cada microsegundo.
+Ejemplo: Reloj de 8Mhz (que además es como viene configurado por defecto en esta placa), supondría un preescalador de 8, haciendo las cuentas 8x10<sup>6</sup> Hz / 8 = 10<sup>6</sup> Hz.  El contador se actualizara cada microsegundo.
 
-**delay_us** simplemente vigila el valor de contador hasta que llega al valor deseado, no es buena práctica hacerlo de esta manera por que, como he comentado antes, bloquea el procesador pero he decidido hacerlos así por que no tengo restricciones de tiempo importantes.
+**delay_us** simplemente vigila el valor de contador hasta que llega al valor deseado, no es buena práctica hacerlo de esta manera porque, como he comentado antes, bloquea el procesador, pero he decidido hacerlos así por queno tengo restricciones de tiempo importantes.
 
 # Continuará
 
