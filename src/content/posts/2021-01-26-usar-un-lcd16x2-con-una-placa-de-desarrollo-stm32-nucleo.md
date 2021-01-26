@@ -3,12 +3,14 @@ template: blog-post
 title: Usar un LCD16x2 con una placa de desarrollo STM32 Nucleo.
 slug: /LCD16x2_STM32
 date: 2021-01-26 13:05
-description: |
+description: |-
   LCD16x2
   STM32
   NUCLEO-F446RE
   Embebido
   Embedded
+  STM32F446RE 
+  LCD 1602 Module
 ---
 ## Introducción
 
@@ -91,7 +93,7 @@ void delay_us(volatile uint16_t u16){
 
 **timer\_delay\_init** Inicializa el contador que se le indique, en mi caso el contador *TIM6* y se le aplica un pre-escalado  igual a la velocidad del reloj dividido un millón, de esta forma (siempre que el reloj sea mayor a 1 Mhz) el contador avanzará en una unidad cada microsegundo.
 
-Ejemplo: Reloj de 8Mhz (que además es el como viene configurado por defecto en esta placa), supondría un preescalador de 8,haciendo las cuentas 8x10^6 / 8 = 10^6 Hz.  Es decir cada microsegundo se actualiza el contador.
+Ejemplo: Reloj de 8Mhz (que además es el como viene configurado por defecto en esta placa), supondría un preescalador de 8,haciendo las cuentas 8x10<sup>6</sup> Hz / 8 = 10<sup>6</sup> Hz.  El contador se actualiza cada microsegundo.
 
 **delay_us** simplemente vigila el valor de contador hasta que llega al valor deseado, no es buena práctica hacerlo de esta manera por que, como he comentado antes, bloquea el procesador pero he decidido hacerlos así por que no tengo restricciones de tiempo importantes.
 
