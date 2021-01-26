@@ -32,7 +32,7 @@ Al usar la librería HAL de STM32 disponemos de la función **HAL\_Delay** que c
 
 Estas esperas pueden solventarse leyendo el estado de la bandera *busy* que proporciona el dispositivo, pero para eso necesitas cambiar el modo de funcionamiento de uno de los pins y termina siendo mas trabajoso que simplemente esperar un tiempo prudencial.
 
-*¡Importante! Tanto HAL\_Delay como delay\_us van a ser funciones que bloquean el procesador, no es la mejor manera de implementarlo, pero como no voy a usarlo en un sistema con unos requisitos temporales estrictos lo he hecho así.*
+<i>¡Importante! Tanto HAL_Delay como delay_us van a ser funciones que bloquean el procesador, no es la mejor manera de implementarlo, pero como no voy a usarlo en un sistema con unos requisitos temporales estrictos lo he hecho así.</i>
 
 El controlador del LCD (*HD44780* o similar) dispone de dos modos de funcionamiento, bus de dato de 8 bits o de 4 bits, en el segundo caso tienes que enviar a información en dos veces pero a cambio tienes que usar 4 cables menos. Este es el modo de funcionamiento que se ha implementado.
 
