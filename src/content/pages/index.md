@@ -14,4 +14,4 @@ Graduado en el grado de Electrónica Industrial en la universidad de Málaga que
 \
 Mientras encuentro la oportunidad de desarrollar mi carrera profesional continuo mi aprendizaje a través de MOOCs y proyectos.
 
-<!--EndFragment-->He is a award winning gaming graphic designer, based in sunny side of California. Working as Principal designer at Bethesda
+<!--EndFragment-->
