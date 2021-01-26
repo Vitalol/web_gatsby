@@ -1,7 +1,7 @@
 ---
 template: about-page
 slug: /about
-title: About Foundation
+title: Sobre mí
 ---
 Bienvenid@ a mi pequeño espacio en la red, me llamo Víctor y me gradué en Ingeniería Electrónica Industrial por la universidad de Málaga a finales del 2020. Desde entonces he intentado seguir mi aprendizaje realizando cursos en plataformas online (Udemy, Coursera...), leyendo libros e intentando implementar lo aprendido en pequeños proyectos  por cuenta propia.
 
@@ -32,17 +32,24 @@ Grado en ingeniería Electrónica Industrial, Universidad de Málaga (2017-2020)
   * RTOS usando FreeRTOS.
 *  Programación de Raspberry PI .
   * Realización de proyectos guiado de RB PI en Python.  
-* **Experiencia con FPGA**  ·      
-  * TFG basado en el uso de FPGA para desarrollo de prácticas de laboratorio mediante  el uso de bloques.
-  * Iniciación en VHDL.
-* **Experiencia en robótica.**  ·      
-  * Programación en VAL3 de robot industrial Staubli.  ·      
-  * Introducción a ABB robotstudio.  ·      
-  * Taller de iniciación a ROS.  
-* **Otros**             
-  * Matlab	Simulink	LabView	Github	OrCad	DesignSpark
+
+**Experiencia con FPGA**  ·      
+
+* TFG basado en el uso de FPGA para desarrollo de prácticas de laboratorio mediante  el uso de bloques.
+* Iniciación en VHDL.
+
+**Experiencia en robótica.**  ·      
+
+* Programación en VAL3 de robot industrial Staubli.  ·      
+* Introducción a ABB robotstudio.  ·      
+* Taller de iniciación a ROS.  
+
+**Otros**             
+
+* Matlab	Simulink	LabView	Github	OrCad	DesignSpark
 
 ### Idiomas
 
-**Inglés** Nivel B2 	Linguaskill General - Score 175 - CEFR Level B2 certificado por Cambridge Assessment English.
+* **Inglés** Nivel B2 	Linguaskill General - Score 175 - CEFR Level B2 certificado por Cambridge Assessment English.
+
 
