@@ -96,3 +96,8 @@ Ejemplo: Reloj de 8Mhz (que además es el como viene configurado por defecto en 
 **delay_us** simplemente vigila el valor de contador hasta que llega al valor deseado, no es buena práctica hacerlo de esta manera por que, como he comentado antes, bloquea el procesador pero he decidido hacerlos así por que no tengo restricciones de tiempo importantes.
 
 # Continuará
+
+Prueba matemáticas
+$$
+\frac{8\times 10^6 hz}{8} = 10^6 Hz
+$$
