@@ -22,7 +22,6 @@ Grado en ingeniería Electrónica Industrial, Universidad de Málaga (2017-2020)
 ### Competencias
 
   **Experiencia con Microcontroladores**  ·      
-
 * Programación en lenguaje mnemónico (Ensamblador) de la familia MSP430 de TI.    
 * Programación en C de ARM Cortex-M4 usando la serie STM32F4. 
   * Programación de drivers y api para diferentes periféricos.  
