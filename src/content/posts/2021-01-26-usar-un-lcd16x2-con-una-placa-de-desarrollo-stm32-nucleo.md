@@ -20,15 +20,15 @@ Para programar el microcontrolador he hecho uso de las funciones HAL de STM32, p
 
 ## Lista dispositivos usados
 
-- **STM32F446RE Nucleo board**, un microcontrolador con una CPU Arm® Cortex®-M4 32-bit
-- **LCD 1602 Module**, la pantalla LCD que incluía el kit de Arduino.
-- **AzDelivery Logic Analyzer**, una analizador lógico barato para ayudarme en la depuración.
+* **STM32F446RE Nucleo board**, un microcontrolador con una CPU Arm® Cortex®-M4 32-bit
+* **LCD 1602 Module**, la pantalla LCD que incluía el kit de Arduino.
+* **AzDelivery Logic Analyzer**, una analizador lógico barato para ayudarme en la depuración.
 
 ## Consideraciones previas
 
 El modulo LCD cuenta con un pin de habilitación **E** , según el fabricante este pin debe mantenerse a nivel alto mientras se ejecuta la instrucción, estás instrucciones pueden tardar unos milisegundos o unos microsegundos dependiendo de lo que hagan.
 
-Al usar la librería HAL de STM32 disponemos de la función **HAL_Delay** que crea esperas de tantos ms como le pidas, pero una espera de un ms para algo que necesita 40-60 μs es pasarse, por lo que necesitaremos una función de apoyo, **delay_us**, para las esperas mas cortas.
+Al usar la librería HAL de STM32 disponemos de la función **HAL\_Delay** que crea esperas de tantos ms como le pidas, pero una espera de un ms para algo que necesita 40-60 μs es pasarse, por lo que necesitaremos una función de apoyo, **delay\_us**, para las esperas mas cortas.
 
 Estas esperas pueden solventarse leyendo el estado de la bandera *busy* que proporciona el dispositivo, pero para eso necesitas cambiar el modo de funcionamiento de uno de los pins y termina siendo mas trabajoso que simplemente esperar un tiempo prudencial.
 
@@ -89,11 +89,10 @@ void delay_us(volatile uint16_t u16){
 }
 ```
 
-**timer_delay_init** Inicializa el contador que se le indique, en mi caso el contador *TIM6* y se le aplica un pre-escalado  igual a la velocidad del reloj dividido un millón, de esta forma (siempre que el reloj sea mayor a 1 Mhz) el contador avanzará en una unidad cada microsegundo.
+**timer\_delay\_init** Inicializa el contador que se le indique, en mi caso el contador *TIM6* y se le aplica un pre-escalado  igual a la velocidad del reloj dividido un millón, de esta forma (siempre que el reloj sea mayor a 1 Mhz) el contador avanzará en una unidad cada microsegundo.
 
 Ejemplo: Reloj de 8Mhz (que además es el como viene configurado por defecto en esta placa), supondría un preescalador de 8,haciendo las cuentas 8x10^6 / 8 = 10^6 Hz.  Es decir cada microsegundo se actualiza el contador.
 
 **delay_us** simplemente vigila el valor de contador hasta que llega al valor deseado, no es buena práctica hacerlo de esta manera por que, como he comentado antes, bloquea el procesador pero he decidido hacerlos así por que no tengo restricciones de tiempo importantes.
 
 # Continuará
-
