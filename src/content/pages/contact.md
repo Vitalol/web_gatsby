@@ -1,8 +1,10 @@
 ---
 template: contact-page
 slug: /contact
-title: Get in touch
+title: Contacto
 ---
-Got a burning question regarding **JAMstack**, Need a new **Website**, or just anything in general. We are happy to talk.
+<!--StartFragment-->
 
-Just send us a message using the form below or you can send us a DM on [Twitter](https://twitter.com/stackrole)
+Sientete libre contactar conmigo rellenando este formulario o directamente a través de mi dirección de [correo](victortamayoolea@gmail.com) .
+
+<!--EndFragment-->
