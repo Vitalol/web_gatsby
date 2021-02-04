@@ -16,31 +16,33 @@ Grado en ingeniería Electrónica Industrial, Universidad de Málaga (2017-2020)
 ### Cursos
 
 * Master Microcontroller and Embedded Driver Development (MCU1 y MCU2), FastBit Embedded Brain Academy (Udemy)
-
 * Mastering RTOS: Hands-on FreeRTOS and STM32Fx with Debugging, FastBit Embedded Brain Academy (Udemy)
 
 ### Competencias
 
   **Experiencia con Microcontroladores**  ·      
+
 * Programación en lenguaje mnemónico (Ensamblador) de la familia MSP430 de TI.    
 * Programación en C de ARM Cortex-M4 usando la serie STM32F4. 
+
   * Programación de drivers y api para diferentes periféricos.  
   * Programación usando las herramientas HAL proporcionada por el fabricante.
   * Comunicación mediante SPI, I2C, USART y CAN.
   * Gestión del consumo energético. 
   * RTOS usando FreeRTOS.
-*  Programación de Raspberry PI .
-  * Realización de proyectos guiado de RB PI en Python.  
+* Programación de Raspberry PI .
+* Realización de proyectos guiado de RB PI en Python.  
 
 **Experiencia con FPGA**  ·      
 
 * TFG basado en el uso de FPGA para desarrollo de prácticas de laboratorio mediante  el uso de bloques.
 * Iniciación en VHDL.
 
-**Experiencia en robótica.**  ·      
+**Experiencia en Robótica y PLC.**        
 
-* Programación en VAL3 de robot industrial Staubli.  ·      
-* Introducción a ABB robotstudio.  ·      
+* Programación en VAL3 de robot industrial Staubli.
+* Programación haciendo uso del lenguaje normalizado IEC 60848 (GRAFCET) y la guía GEMMA usando Twincat 2 de un autómata programable industrial (PLC).
+* Introducción a ABB robotstudio.        
 * Taller de iniciación a ROS.  
 
 **Otros**             
@@ -50,5 +52,3 @@ Grado en ingeniería Electrónica Industrial, Universidad de Málaga (2017-2020)
 ### Idiomas
 
 * **Inglés** Nivel B2 	Linguaskill General - Score 175 - CEFR Level B2 certificado por Cambridge Assessment English.
-
-
