@@ -48,6 +48,7 @@ Grado en ingeniería Electrónica Industrial, Universidad de Málaga (2017-2020)
 **Otros**             
 
 * Matlab	Simulink	LabView	Github	OrCad	DesignSpark
+* Openmodelica
 
 ### Idiomas
 
